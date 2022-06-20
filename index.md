@@ -17,6 +17,8 @@ Syntax highlighted code block
 
 - Bulleted
 - List
+- Of
+- Items
 
 1. Numbered
 2. List
