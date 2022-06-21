@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
   
   <title>Frontend Mentor | IP Address Tracker</title>
 
@@ -14,21 +19,48 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-  IP Address Tracker
+    <div class="title">IP Address Tracker</div>
 
-  Search for any IP address or domain
+    <form action="index.html" method="get">
+      <div id="searchBar">
+        <input class="search-txt" type="text" placeholder="Search for any IP address or domain" required>
+        <button class="search-submit" type="submit" method="get">
+          <img src="img/icon-arrow.svg" alt="arrow-button">
+        </button>
+      </div>
+    </form>
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="results-grid">
+      
+      <div class="result">
+          <p class="title-result">IP Address</p>
+          <p class="answer">192.212.174.101</p>
+      </div>
+
+      <div class="result">
+        <p class="title-result">Location</p>
+        <p class="answer">Brooklyn, NY 10001</p>
+      </div>
+
+      <div class="result">
+        <p class="title-result">Timezone</p>
+        <p class="answer">UTC <span id="offset">-05:00</span></p>
+      </div>
+
+      <div class="ips result">
+        <p class="title-result">ISP</p>
+        <p class="answer">SpaceX Starlink</td></p>
+      </div>
+
+    </div>
+
   </div>
-</body>
+
+  <div id="mapid"></div>
+
+  </body>
 </html>

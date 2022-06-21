@@ -1,0 +1,146 @@
+* , *::after, *::before {
+   font-family: 'Rubik', sans-serif;
+   margin: 0%;
+   padding: 0%;
+   box-sizing: inherit;
+}
+
+.container {
+   position: relative;
+   text-align: center;
+   color: black;
+   background-image: url(img/pattern-bg.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   height: 15rem;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+
+.title {
+   position: absolute;
+   top: 15%;
+   left: 50%;
+   color: white;
+   font-weight: 500;
+   font-size: 30px;
+   transform: translate(-50%, -50%);
+}
+
+#searchBar {
+   position: relative;
+   width: 40rem;
+   height: 50px;
+   top: 6rem;
+   cursor: pointer;
+}
+
+.search-txt {
+   width: 100%;
+   border-radius: 15px;
+   border: 1px white solid;
+   padding: 3px 3px 3px 25px;
+   position: absolute;
+   left: 0;
+   height: 3rem;
+   z-index: 5;
+   font-size: 1.5ch;
+   cursor: pointer;
+}
+
+.search-submit {
+   position: absolute;
+   left: 94.8%;
+   height: 3.5rem;
+   width: 10%;
+   z-index: 10;
+   border-top-right-radius: 15px;
+   border-bottom-right-radius: 15px;
+   border: none;
+   background:#000;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: darkgrey;
+}
+
+.results-grid {
+   position: relative;
+   background: #fff;
+   width: 1000px;
+   margin: auto;
+   top: 100px;
+   z-index: 999;
+   display: flex;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   border-radius: 20px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.results-grid .result {
+   width: 25%;
+   padding-left: 15px;
+   padding-right: 5px;
+   text-align: left;
+   display: flex;
+   flex-direction: column;
+   border-right: 2px solid hsl(0, 0%, 79%);
+}
+
+.title-result {
+   text-transform: uppercase;
+   font-size: 16px;
+   color: hsl(0, 0%, 79%);
+   margin-bottom: 5px;
+}
+
+.answer {
+   font-size: 24px;
+   font-weight: 500;
+}
+
+.ips {
+   border-right: unset !important;
+}
+
+@media (max-width: 1050px) {
+   .results-grid {
+     width: 97%;
+   }
+ }
+ 
+ @media (max-width: 950px) {
+   .results-grid {
+     width: 450px;
+     flex-direction: column;
+   }
+   .results-grid .results {
+     width: 100%;
+     border-right: unset;
+     text-align: center;
+     margin-bottom: 15px;
+   }
+   .ips {
+     margin-bottom: 0 !important;
+   }
+ }
+ 
+ @media (max-width: 600px) {
+   .results-grid {
+     width: 80%;
+     padding-top: 15px;
+     padding-bottom: 15px;
+   }
+   .results-grid .results {
+     margin-bottom: 10px;
+   }
+   .title-result {
+     margin-bottom: 0;
+   }
+}
