@@ -21,7 +21,6 @@ body {
   height: 18rem;
   justify-content: flex-start;
   align-items: center;
-  caret-color: red;
 }
 
 h1 {
@@ -35,11 +34,12 @@ h1 {
   border-radius: 1rem 0 0 1rem;
   border-color: white;
   font-size: 1.4rem;
+  caret-color: red;
+  text-indent: 10%;
 }
 
 .inputField::placeholder {
   font-size: 1.1rem;
-  padding-left: 1.8rem;
 }
 
 .submitBtn {
@@ -47,6 +47,12 @@ h1 {
   height: 3.6rem;
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 0 1rem 1rem 0;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: rgb(63, 63, 63);
+  border-color: rgba(63, 63, 63, 0.555);
 }
 
 form {
@@ -73,6 +79,10 @@ ul {
   gap: 10px;
   list-style: none;
   padding-top: 1rem;
+}
+
+.dataList {
+  border-right: 1px solid rgba(0, 0, 0, 0.356);
 }
 
 .dataListTitle {
