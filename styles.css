@@ -31,7 +31,7 @@
    transform: translate(-50%, -50%);
 }
 
-#searchBar {
+#search {
    position: relative;
    width: 40rem;
    height: 50px;
@@ -39,7 +39,7 @@
    cursor: pointer;
 }
 
-.search-txt {
+.search__txt {
    width: 100%;
    border-radius: 15px;
    border: 1px white solid;
@@ -52,7 +52,7 @@
    cursor: pointer;
 }
 
-.search-submit {
+.search__submit {
    position: absolute;
    left: 94.8%;
    height: 3.5rem;
@@ -69,7 +69,7 @@ button:hover {
    background-color: darkgrey;
 }
 
-.results-grid {
+.results {
    position: relative;
    background: #fff;
    width: 1000px;
@@ -83,7 +83,7 @@ button:hover {
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.results-grid .result {
+.results .results__cell {
    width: 25%;
    padding-left: 15px;
    padding-right: 5px;
@@ -93,14 +93,15 @@ button:hover {
    border-right: 2px solid hsl(0, 0%, 79%);
 }
 
-.title-result {
+.results__title {
    text-transform: uppercase;
    font-size: 16px;
+   font-weight: bold;
    color: hsl(0, 0%, 79%);
    margin-bottom: 5px;
 }
 
-.answer {
+.results__answer {
    font-size: 24px;
    font-weight: 500;
 }
@@ -109,18 +110,24 @@ button:hover {
    border-right: unset !important;
 }
 
+#map { 
+   height: 65rem; 
+   background-color: #000;
+   min-height: 79vh;
+}
+
 @media (max-width: 1050px) {
-   .results-grid {
+   .results {
      width: 97%;
    }
  }
  
  @media (max-width: 950px) {
-   .results-grid {
+   .results {
      width: 450px;
      flex-direction: column;
    }
-   .results-grid .results {
+   .results .results__cell {
      width: 100%;
      border-right: unset;
      text-align: center;
@@ -132,15 +139,15 @@ button:hover {
  }
  
  @media (max-width: 600px) {
-   .results-grid {
+   .results {
      width: 80%;
      padding-top: 15px;
      padding-bottom: 15px;
    }
-   .results-grid .results {
+   .results .results__cell {
      margin-bottom: 10px;
    }
-   .title-result {
+   .results__title {
      margin-bottom: 0;
    }
 }

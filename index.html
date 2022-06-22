@@ -8,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
   
   <title>Frontend Mentor | IP Address Tracker</title>
 
@@ -21,46 +23,52 @@
 </head>
 
 <body>
+
   <div class="container">
 
     <div class="title">IP Address Tracker</div>
 
     <form action="index.html" method="get">
-      <div id="searchBar">
-        <input class="search-txt" type="text" placeholder="Search for any IP address or domain" required>
-        <button class="search-submit" type="submit" method="get">
+      <div id="search">
+        <input id="ip"class="search__txt" type="text" name="searchInput" placeholder="Search for any IP address or domain" required>
+        <button id="button" class="search__submit" type="submit" method="get">
           <img src="img/icon-arrow.svg" alt="arrow-button">
         </button>
       </div>
     </form>
 
-    <div class="results-grid">
+    <div class="results">
       
-      <div class="result">
-          <p class="title-result">IP Address</p>
-          <p class="answer">192.212.174.101</p>
+      <div class="results__cell">
+          <p class="results__title">IP Address</p>
+          <p id="ip_add"class="results__answer">192.212.174.101</p>
       </div>
 
-      <div class="result">
-        <p class="title-result">Location</p>
-        <p class="answer">Brooklyn, NY 10001</p>
+      <div class="results__cell">
+        <p class="results__title">Location</p>
+        <p id="town"class="results__answer">Brooklyn, NY 10001</p>
       </div>
 
-      <div class="result">
-        <p class="title-result">Timezone</p>
-        <p class="answer">UTC <span id="offset">-05:00</span></p>
+      <div class="results__cell">
+        <p class="results__title">Timezone</p>
+        <p id="zone"class="results__answer">UTC <span id="offset">-05:00</span></p>
       </div>
 
-      <div class="ips result">
-        <p class="title-result">ISP</p>
-        <p class="answer">SpaceX Starlink</td></p>
+      <div class="ips results__cell">
+        <p class="results__title">ISP</p>
+        <p id="isp_result"class="results__answer">SpaceX Starlink</td></p>
       </div>
 
     </div>
 
   </div>
 
-  <div id="mapid"></div>
-
+  <div id="map"></div>
   </body>
 </html>
+
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+
+<script src="./App.js" type="text/javascript"></script>
