@@ -3,8 +3,8 @@
 const inputField = document.querySelector(".inputField");
 const submitBtn = document.querySelector(".submitBtn");
 const ipAddress = document.querySelector(".ipAddress");
-const location = document.querySelector(".location");
-const timeZone = document.querySelector(".location");
+const locationData = document.querySelector(".location");
+const timeZone = document.querySelector(".timeZone");
 const isp = document.querySelector(".isp");
 
 //Leaflet Map
@@ -29,17 +29,22 @@ L.marker([51.5, -0.09])
 // getPosition().then((pos) => console.log(pos));
 
 // IPify API
-// https://geo.ipify.org/api/v2/country,city?apiKey=at_5azKAD4YK0mwQNBotQlfpXSZyww2C&ipAddress=8.8.8.8
-
-submitBtn.addEventListener("click", function () {
-  const getIpify = async () => {
-    const ipInput = inputField.value;
+const getIpData = async (ipInput) => {
+  try {
     const res = await fetch(
       `https://geo.ipify.org/api/v2/country,city?apiKey=at_5azKAD4YK0mwQNBotQlfpXSZyww2C&ipAddress=${ipInput}`
     );
     const data = await res.json();
-    return data;
-  };
-});
+    return (
+      (ipAddress.textContent = data.ip),
+      (locationData.textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`),
+      (timeZone.textContent = data.location.timezone),
+      (isp.textContent = data.isp)
+    );
+  } catch (err) {
+    alert("Please whitelist this page.");
+    console.log(err);
+  }
+};
 
-//TO DO: sort returned data(.ip, .location, .location.timezone, .isp) into appropriate DOM elements.
+submitBtn.addEventListener("click", getIpData(inputField.value));
