@@ -31,14 +31,26 @@ updateMarker = (update_marker = [30, -95]) => {
    myMarker = L.marker(update_marker, {icon: customIcon}).addTo(map);
 }
 
-let ip_url;
+let ip_url
+
+function validateIPaddress(ipaddress) 
+{  
+   if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipaddress))
+   {  
+     return (true)
+   }  
+   return (false) 
+} 
 
 getIPDetails = (default_ip) => {
    if(default_ip == undefined) {
       ip_url = `${api_url}&apiKey=${secret_api}`;
    }
-   else {
+   else if(this.validateIPaddress(default_ip) == true){
       ip_url = `${api_url}&apiKey=${secret_api}&ipAddress=${default_ip}`;
+   }
+   else{
+      ip_url = `${api_url}&apiKey=${secret_api}&domain=${default_ip}`
    }
 
    fetch(ip_url)
