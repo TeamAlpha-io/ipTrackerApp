@@ -45,7 +45,7 @@ getIPDetails = (default_ip) => {
    .then(results => results.json())
    .then(data => {
       current_ip.innerHTML = data.ip
-      current_town.innerHTML = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`
+      current_town.innerHTML = `${data.location.region}, ${data.location.country} ${data.location.postalCode}`
       current_zone.innerHTML = `UTC ${data.location.timezone}`
       current_isp.innerHTML = data.isp
 

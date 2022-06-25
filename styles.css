@@ -5,6 +5,8 @@
    box-sizing: inherit;
 }
 
+
+
 .container {
    position: relative;
    text-align: center;
@@ -114,6 +116,11 @@ button:hover {
    height: 65rem; 
    background-color: #000;
    min-height: 79vh;
+}
+
+.outer-container {
+   height: 80rem;
+   overflow: scroll;
 }
 
 @media (max-width: 1050px) {
