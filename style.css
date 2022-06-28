@@ -42,6 +42,12 @@ h1 {
   font-size: 1.1rem;
 }
 
+.inputField::selection {
+  background-color: hotpink;
+  color: cyan;
+  font-weight: bold;
+}
+
 .submitBtn {
   width: 3.5rem;
   height: 3.6rem;
@@ -63,6 +69,7 @@ form {
 }
 
 .data {
+  position: relative;
   padding: 1rem;
   margin: -5rem auto;
   max-width: 75%;
@@ -70,6 +77,7 @@ form {
   background-color: white;
   border-radius: 1rem;
   text-align: center;
+  z-index: 1000;
 }
 
 ul {
@@ -85,11 +93,17 @@ ul {
   border-right: 1px solid rgba(0, 0, 0, 0.356);
 }
 
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .dataListTitle {
-  padding-bottom: 1.6rem;
+  padding-bottom: 2rem;
 }
 
 #map {
-  height: 100vh;
-  z-index: -1;
+  width: 100vw;
+  height: 78vh;
+  z-index: 0;
 }
