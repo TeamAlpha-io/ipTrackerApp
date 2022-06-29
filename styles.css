@@ -35,30 +35,31 @@
 
 #search {
    position: relative;
-   width: 40rem;
+   width: 18em;
    height: 50px;
-   top: 6rem;
+   top: 5rem;
    cursor: pointer;
+   display: flex;
 }
 
 .search__txt {
-   width: 100%;
+   width: 90%;
    border-radius: 15px;
    border: 1px white solid;
-   padding: 3px 3px 3px 25px;
+   padding: 3px 3px 3px 15px;
    position: absolute;
    left: 0;
    height: 3rem;
    z-index: 5;
-   font-size: 1.5ch;
+   font-size: 1.3ch;
    cursor: pointer;
 }
 
 .search__submit {
    position: absolute;
-   left: 94.8%;
+   left: 85%;
    height: 3.5rem;
-   width: 10%;
+   width: 15%;
    z-index: 10;
    border-top-right-radius: 15px;
    border-bottom-right-radius: 15px;
@@ -131,11 +132,11 @@ button:hover {
  
  @media (max-width: 950px) {
    .results {
-     width: 450px;
+     width: 80%;
      flex-direction: column;
    }
    .results .results__cell {
-     width: 100%;
+     width: 90%;
      border-right: unset;
      text-align: center;
      margin-bottom: 15px;
@@ -156,5 +157,15 @@ button:hover {
    }
    .results__title {
      margin-bottom: 0;
+     font-size: 1.3ch;
+   }
+   .results__answer {
+      font-size: 1.3ch;
+   }
+   .search__txt {
+      font-size: 1.3ch;
+   }
+   .title {
+      font-size: 15px;
    }
 }
