@@ -84,9 +84,15 @@ ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.2rem;
   list-style: none;
   padding-top: 1rem;
+}
+
+li {
+  text-align: center;
 }
 
 .dataList {
@@ -99,7 +105,7 @@ h2 {
 }
 
 .dataListTitle {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 #map {
